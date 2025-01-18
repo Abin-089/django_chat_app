@@ -1,0 +1,107 @@
+/* Styling for the rooms section */
+.w-full {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-xl {
+    border-radius: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-5 {
+    margin-bottom: 1.25rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.bg-teal-600 {
+    background-color: #38b2ac;
+}
+
+.bg-teal-700 {
+    background-color: #319795;
+}
+
+.hover\:bg-teal-700:hover {
+    background-color: #319795;
+}
+
+.px-5, .py-3 {
+    padding: 0.75rem 1.25rem;
+}
+
+.block {
+    display: block;
+}
+
+.text-white {
+    color: white;
+}
+
+/* Collapsible User List Styles */
+.user-list-container {
+    margin-top: 20px;
+}
+
+.toggle-menu {
+    margin-top: 20px;
+    background-color: #38b2ac;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.toggle-menu:hover {
+    background-color: #319795;
+}
+
+.user-list {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-list li {
+    padding: 0.5rem;
+}
+
+.user-list a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.user-list a:hover {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
