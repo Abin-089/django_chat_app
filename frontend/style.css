@@ -1,0 +1,240 @@
+/*************************************************************
+ * RESET & GLOBAL
+ *************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #333;
+  background-color: #f0f2f5;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*************************************************************
+ * NAVBAR (FIXED AT TOP)
+ *************************************************************/
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #343a40;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  justify-content: flex-start; /* brand on left, nav-right on far right */
+}
+.menu-toggle-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.navbar .brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.logout-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/*************************************************************
+ * FOOTER (FIXED AT BOTTOM)
+ *************************************************************/
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  font-size: 0.9rem;
+}
+
+/*************************************************************
+ * CONTENT WRAPPER (Between navbar & footer)
+ *************************************************************/
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  margin-top: 60px;  /* space for navbar */
+  margin-bottom: 40px; /* space for footer */
+  height: calc(100vh - 60px - 40px);
+  overflow: hidden; /* to avoid side scroll from panels */
+}
+
+/*************************************************************
+ * LEFT MENU (SLIDE-OUT DRAWER)
+ *************************************************************/
+.left-menu {
+  position: fixed;
+  top: 60px;
+  bottom: 40px;
+  left: 0;
+  width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #ced4da;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  transform: translateX(-100%); /* hidden by default */
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+.left-menu.open {
+  transform: translateX(0); /* slide in */
+}
+.left-menu h3 {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+.left-menu ul {
+  list-style: none;
+  margin-top: 10px;
+}
+.left-menu li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+.left-menu li a {
+  display: block;
+  padding: 4px;
+  border-radius: 4px;
+  color: #333;
+}
+.left-menu li a:hover {
+  background-color: #e9ecef;
+}
+
+/*************************************************************
+ * MAIN CONTENT (CENTER)
+ *************************************************************/
+.main-content {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 240px; /* default space for menu if open, can be 0 if closed */
+  transition: margin-left 0.3s ease;
+  overflow: hidden;
+}
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.message {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+.message.sent {
+  text-align: right;
+  color: #28a745;
+}
+.message.received {
+  text-align: left;
+  color: #007bff;
+}
+.message strong {
+  font-weight: 600;
+}
+.input-area {
+  display: flex;
+  gap: 10px;
+}
+.input-area textarea {
+  flex: 1;
+  resize: none;
+  height: 40px;
+  font-size: 1rem;
+  padding: 6px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+.input-area button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.input-area button:hover {
+  background-color: #0069d9;
+}
+
+/*************************************************************
+ * RIGHT PANEL (Hide on smaller screens)
+ *************************************************************/
+.right-panel {
+  width: 200px;
+  background-color: #fff;
+  border-left: 1px solid #ced4da;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.right-panel h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/*************************************************************
+ * RESPONSIVE BREAKPOINTS
+ *************************************************************/
+/* Hide the right panel on screens < 992px, for instance */
+@media (max-width: 992px) {
+  .right-panel {
+    display: none;
+  }
+}
+
+/* On narrower screens, auto-hide the left menu if desired. */
+@media (max-width: 768px) {
+  .left-menu {
+    width: 0;
+    transform: translateX(-100%);
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}

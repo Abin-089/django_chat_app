@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Chat App - Home</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <div class="navbar">
+    <button class="menu-toggle-btn" id="toggleMenuBtn">☰</button>
+    <div class="brand">My Chat App</div>
+    <div class="nav-right">
+      <span class="username">Hello, JohnDoe</span>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </div>
+
+  <!-- LEFT MENU (Slide-Out Drawer) -->
+  <div class="left-menu" id="leftMenu">
+    <h3>All Users</h3>
+    <ul>
+      <li><a href="#">Alice</a></li>
+      <li><a href="#">Bob</a></li>
+      <li><a href="#">Charlie</a></li>
+    </ul>
+  </div>
+
+  <!-- CONTENT WRAPPER -->
+  <div class="content-wrapper">
+    <!-- MAIN CONTENT -->
+    <div class="main-content" id="mainContent">
+      <!-- Messages Area -->
+      <div class="chat-messages" id="messagesContainer">
+        <div class="message received"><strong>Alice:</strong> Hey there!</div>
+        <div class="message sent"><strong>You:</strong> Hi Alice!</div>
+        <div class="message received"><strong>Alice:</strong> How's it going?</div>
+      </div>
+      <!-- Input Area -->
+      <div class="input-area">
+        <textarea id="messageInput" placeholder="Type a message..."></textarea>
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL (Optional on large screens) -->
+    <div class="right-panel">
+      <h3>Extra Info</h3>
+      <p>Notifications, profile info, etc. can go here.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">&copy; 2025 My Chat App</div>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
